@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*home button*/
+body, html {
+    font-family: Arial, sans-serif;
+    height: 100%
+}
+html {
+    scroll-behavior: smooth;
+}
+@media (max-width: 768px) {
+    .home-button {
+        position: fixed; 
+        bottom: 20px;    
+        right: 20px;     
+        background-color: #0073ff; 
+        color: white; 
+        padding: 10px 20px; 
+        font-size: 1rem; 
+        border: none; 
+        border-radius: 5px; 
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 1); 
+        text-decoration: none; 
+        cursor: pointer; 
+        z-index: 1001; 
+        transition: transform 0.2s ease; 
+    }
+    
+    .home-button:hover {
+        transform: scale(1.1); 
+        background-color: #ffffff; 
+    }
+    
+}
+
+
+/* nav */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 1000px;
+    z-index: 1000;
+
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.0rem;
+    text-transform: none;
+    transition: 0.25s ease;
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+ul li {
+    text-decoration: none;
+    margin: 0 5em 0 5em;
+}
+ul :not(:hover) a {
+    color: 575757;
+}
+ul :hover a:hover {
+    color: 8EAAFB;
+    box-shadow: 0 2px 0 0 currentColor;
+}
+
+
+
+/* landing/front with type writer effect*/
+.landing {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    background: url('portfolio1image.jpg') no-repeat center center/cover;
+    color: white;
+}
+.landing h2 {
+    font-size: 2.25rem;
+    font-weight:lighter;
+    justify-content: left;
+}
+.landing h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    justify-content: left;
+
+    border-right: solid 3px white;
+
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+
+    animation:
+        type 0.75s steps(11) 1s forwards,
+        blink 0.5s steps(1) infinite;
+}
+@keyframes type {
+    to { width: 11ch }
+}
+@keyframes blink {
+    from { border-color: transparent }
+    50% { border-color: white }
+    to { border-color: transparent }
+}
+
+
+/* project section with tiktok slider */
+#projects {
+    padding: 60px 20px;
+    background-color: rgba(248, 67, 1, 0.7);
+    text-align: right;
+}
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #000000;
+}
+.projects-container {
+    margin: 100px 0 0 5px;
+    width: 70%;
+    height: 450px;
+    display: center;
+    justify-content: center;
+    gap: 10px;
+}
+.projects-container img{
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(249, 249, 249, 0.6);
+    transition: all ease-in-out 0.5s;
+}
+.projects-container img:hover {
+    width: 55%
+}
+.projects-textbox {
+    max-width: 600%;
+    margin: 20px left; /* Center the textbox */
+    padding: 2px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-size: 1.2rem;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+
+/* about*/
+#about {
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(199, 243, 3, 0.8); /* Transparent white background */
+    position: relative;
+}
+
+  /* Container to hold text box and image */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 100%;
+    position: relative;
+}
+
+  /* Text Box */
+.about-textbox {
+    flex: 1;
+    max-width: 60%;
+    padding: 40px;
+    background-color: rgba(4, 231, 243, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.about-textbox h2 {
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.about-textbox p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #1e1e1e;
+}
+
+  /* Image */
+.about-image {
+    position: relative; /* Adjust positioning for easier placement */
+    margin-left: auto;  /* Push the image to the far right */
+    margin-right: auto; /* Center horizontally if the section's width changes */
+    max-width: 300px;   /* Adjust the size of the image as needed */
+    text-align: center; /* Ensure it aligns within its container */
+    display: flex;      /* Use flexbox for better alignment */
+    justify-content: center;
+    align-items: center; /* Center the image vertically */
+}
+
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: url('profpic.jpg') no-repeat center center/cover;
+
+}
+
+  /* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .about-textbox {
+    max-width: 100%;
+    margin-bottom: 20px;
+    }
+
+    .about-image {
+    position: relative;
+    width: 80%;
+    }
+
+
+    /*SEPERATE CONTACT PAGE*/
+    /*Connect Section*/
+    #connect {
+        padding: 60px 20px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+    }
+    
+    #connect h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    
+    #contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    #contact-form input, #contact-form textarea {
+        width: 80%;
+        max-width: 500px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin: 5px ;
+    }
+    
+    #contact-form button {
+        padding: 10px 20px;
+        background: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    #contact-form button:hover {
+        background: #45a049;
+    }
+    
+    #social-links a {
+        margin: 0 2px;
+        color: #989daa;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+    
+    #social-links a:hover {
+        color: #ffffff;
+    }
+
+
+    
+}
+
+
+
+
